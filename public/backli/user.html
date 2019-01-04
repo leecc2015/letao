@@ -19,7 +19,7 @@
             <p>超级管理员</p>
         </div>
         <div class="nav_list">
-            <a href="user.html">
+            <a href="user.html" class='current'>
                 <i class='glyphicon glyphicon-user'></i>
                 <span> 用户管理</span>
             </a>
@@ -28,8 +28,8 @@
                 <span> 分类管理</span>
             </a>
             <div>
-                <a href="first.html">一级分类</a>
-                <a href="second.html">二级分类</a>
+                <a href="first.html"> 一级分类</a>
+                <a href="second.html"> 二级分类</a>
             </div>
             <a href="goodManage.html">
                 <i class='glyphicon glyphicon-tags'></i>
@@ -55,8 +55,17 @@
                     <a href="javascript:;">首页</a>
                 </li>
             </ol>
-            <div class="main_col pull-left"></div>
-            <div class="main_bing pull-right"></div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="10%">序号</th>
+                        <th width="20%">用户名</th>
+                        <th width="30%">手机号</th>
+                        <th width="20%">状态</th>
+                        <th width="20%">操作</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 
@@ -91,8 +100,6 @@
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
-    <script src="./js/index.js"></script>
 </body>
 
 </html>

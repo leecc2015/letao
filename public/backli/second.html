@@ -27,9 +27,9 @@
                 <i class='glyphicon glyphicon-list'></i>
                 <span> 分类管理</span>
             </a>
-            <div>
-                <a href="first.html">一级分类</a>
-                <a href="second.html">二级分类</a>
+            <div style="display: block;">
+                <a href="first.html"> 一级分类</a>
+                <a href="second.html" class="current"> 二级分类</a>
             </div>
             <a href="goodManage.html">
                 <i class='glyphicon glyphicon-tags'></i>
@@ -39,24 +39,14 @@
     </div>
     <div class="main">
         <div class="main_header">
-            <a href="#" class="pull-left main_menu">
-                <i class="glyphicon glyphicon-align-justify"></i>
-            </a>
-            <a href="#" class="pull-right main_logout">
-                <i class="glyphicon glyphicon-log-out"></i>
-            </a>
+            <a href="#" class="pull-left main_menu"><i class="glyphicon glyphicon-align-justify"></i></a>
+            <a href="#" class="pull-right main_logout"><i class="glyphicon glyphicon-log-out"></i></a>
         </div>
         <div class="main_bottom">
             <ol class="breadcrumb">
-                <li>
-                    <a href="index.html">管理系统</a>
-                </li>
-                <li>
-                    <a href="javascript:;">首页</a>
-                </li>
-            </ol>
-            <div class="main_col pull-left"></div>
-            <div class="main_bing pull-right"></div>
+                <li><a href="index.html">管理系统</a></li>
+                <li><a href="javascript:;">首页</a></li>
+              </ol>
         </div>
     </div>
 
@@ -64,26 +54,24 @@
 
     <!-- ============== 模态框 =============================== -->
 
-    <!-- Modal -->
-    <div class="modal fade " id="logout" tabindex="-1">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span>&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-                </div>
-                <div class="modal-body">
-                    <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary btn-logout">退出</button>
-                </div>
-            </div>
+  <!-- Modal -->
+  <div class="modal fade " id="logout" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
         </div>
+        <div class="modal-body">
+          <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn-logout">退出</button>
+        </div>
+      </div>
     </div>
+  </div>
 
 
     <script src="./lib/jquery/jquery.js"></script>
@@ -91,8 +79,6 @@
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
-    <script src="./js/index.js"></script>
 </body>
 
 </html>
