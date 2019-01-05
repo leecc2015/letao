@@ -54,7 +54,7 @@
                     <a href="index.html">管理系统</a>
                 </li>
                 <li>
-                    <a href="javascript:;">用户管理</a>
+                    <a href="javascript:;" class='active'>用户管理</a>
                 </li>
             </ol>
             <!-- === 表格部分 ====== -->
@@ -84,7 +84,7 @@
     <script type="text/html" id="userList">
     {{each rows v i}}
     <tr>
-        <td width="10%">{{v.id}}</td>
+        <td width="10%">{{i+1}}</td>
         <td width="20%">{{v.username}}</td>
         <td width="30%">{{v.mobile}}</td>
         {{if v.isDelete == 1}}

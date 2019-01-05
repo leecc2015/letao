@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
 </head>
 
 <body>
@@ -39,39 +40,106 @@
     </div>
     <div class="main">
         <div class="main_header">
-            <a href="#" class="pull-left main_menu"><i class="glyphicon glyphicon-align-justify"></i></a>
-            <a href="#" class="pull-right main_logout"><i class="glyphicon glyphicon-log-out"></i></a>
+            <a href="#" class="pull-left main_menu">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </a>
+            <a href="#" class="pull-right main_logout">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </a>
         </div>
         <div class="main_bottom">
             <ol class="breadcrumb">
-                <li><a href="index.html">管理系统</a></li>
-                <li><a href="javascript:;">首页</a></li>
-              </ol>
+                <li>
+                    <a href="index.html">管理系统</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class='active'>分类管理</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class='active'>一级分类</a>
+                </li>
+            </ol>
+
+            <button class="btn btn-default addCate">添加分类</button>
+
+            <!-- === 表格部分 ====== -->
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="20%">序号</th>
+                        <th width="80%">一级分类名</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <!-- ====== 分页 ====== -->
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
         </div>
     </div>
 
 
 
+    <!-- ============== 模板引擎模板 =============================== -->
+    <script type="text/html" id="firstList">
+        {{each rows v i}}
+        <tr>
+            <td width="20%">{{(page-1)*size + (i+1)}}</td>
+            <td width="80%">{{v.categoryName}}</td>
+           
+        </tr>
+        {{/each}}
+    </script>
     <!-- ============== 模态框 =============================== -->
 
-  <!-- Modal -->
-  <div class="modal fade " id="logout" tabindex="-1">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+    <!-- Modal -->
+    <div class="modal fade " id="logout" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-logout">退出</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="button" class="btn btn-primary btn-logout">退出</button>
-        </div>
-      </div>
     </div>
-  </div>
+
+    <!-- ========================= 添加分类模态框 =============================== -->
+
+    <!-- Modal -->
+    <div class="modal fade " id="insertCate" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                </div>
+                <form id="form">
+                    <div class="input-cate form-group">
+                        <input type="text" name="cateName" class="form-control cateName" placeholder="请输入一级分类">
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary btn-logout insertBtn" form="form">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="./lib/jquery/jquery.js"></script>
@@ -79,6 +147,10 @@
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/first.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 </body>
 
 </html>
