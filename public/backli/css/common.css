@@ -148,6 +148,7 @@
 #insertCate .input-cate {
     height: 79px;
     margin-top:20px;
+    padding:0 16px;
 }
 /* ============== second页面================== */
 .secondLogo img{
@@ -170,4 +171,17 @@
 
 .second_pic2 {
     margin:16px 0 20px 0px;
+}
+
+/* ============== goodManage页面================== */
+#insertGood .input-cate {
+    height: 79px;
+    margin-top:20px;
+    padding:0 16px;
+}
+.insertGood_box {
+    padding:0 16px;
+}
+.insertGood_box_heaader {
+    margin-bottom:15px;
 }
