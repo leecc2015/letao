@@ -25,7 +25,7 @@ $(function () {
 
     // 功能5 显示隐藏分类二级菜单
     var $list = $('.category');
-    console.log($list);
+    // console.log($list);
     $list.on('click',function(){
         $(this).next().stop().slideToggle();
         console.log(1);
