@@ -54,7 +54,7 @@ $(function () {
         // 先解绑模态框确认按钮上的事件，在绑定事件----为了使按钮上始终只有一个事件
         $('.insertBtn').off('click').on('click',function(){
             // 发送ajax请求，更改状态
-            var categoryName = $('.insert').val();
+            var categoryName = $('.cateName').val();
             $.ajax({
                 type:'post',
                 url:'/category/addTopCategory',

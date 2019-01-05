@@ -136,13 +136,18 @@
 }
 
 
+
 /* ============== first页面================== */
 .main_bottom .addCate {
-    margin-bottom:20px;
+    margin-bottom:10px;
+}
+
+#insertCate {
+    padding-left:16px;
 }
 #insertCate .input-cate {
     height: 79px;
-    padding:20px 15px 0;
+    margin-top:20px;
 }
 /* ============== second页面================== */
 .secondLogo img{
@@ -152,20 +157,17 @@
 }
 
 .secondInsert {
-    margin-left:16px;
     margin-top:16px;
 }
 .second_file {
     margin-bottom:0;
 }
-.second_btn {
-    margin-left:16px;
-}
+
 .second_input-cate {
     height: 49px;
-    padding:20px 15px 0;
+    margin-top:20px;
 }
 
 .second_pic2 {
-    margin:16px 0 20px 16px;
+    margin:16px 0 20px 0px;
 }

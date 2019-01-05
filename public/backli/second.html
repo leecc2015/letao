@@ -85,7 +85,7 @@
 
 
 
-    <!-- ============== 模板引擎模板 =============================== -->
+    <!-- ============== 页面渲染模板引擎 =============================== -->
     <script type="text/html" id="secondList">
         {{each rows v i}}
         <tr>
@@ -98,7 +98,11 @@
         </tr>
         {{/each}}
     </script>
-    <!-- ============== 模态框 =============================== -->
+
+
+
+
+    <!-- ============== logout模态框 =============================== -->
 
     <!-- Modal -->
     <div class="modal fade " id="logout" tabindex="-1">
@@ -133,42 +137,53 @@
                     </button>
                     <h4 class="modal-title" id="myModalLabel">添加分类</h4>
                 </div>
-                <form id="form">
-                    <!-- =============选择一级分类=========== -->
-                    <div class="dropdown secondInsert">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                            请选择一级分类
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Action</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- ==============输入标题============== -->
-                    <div class="second_input-cate form-group">
-                        <input type="text" name="cateName" class="form-control cateName" placeholder="请输入二级分类">
-                    </div>
-                    <!-- ===========文件上传========================= -->
-                    <div class="form-group second_file">
-                        <label for="fileupload" class="btn btn-default second_btn">上传图片</label>
-                        <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic" style="display:none">
-                    </div>
-                    <!-- ===========缩略图========================= -->
-                    <div class="form-group second_pic2">
-                        <img src="./images/none.png" width="100">
-                        <input type="hidden" name="pic2">
-                    </div>
-                </form>
+                <div class="modal-body">
+                    <form id="form">
+                        <!-- =============选择一级分类=========== -->
+                        <div class="form-group">
+                            <div class="dropdown secondInsert">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <span class="text">请选择一级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+
+                                </ul>
+                            </div>
+                            <input type="hidden" name="categoryId" id='categoryId'>
+                        </div>
+                        <!-- ==============输入标题============== -->
+                        <div class="second_input-cate form-group">
+                            <input type="text" name="brandName" class="form-control cateName" placeholder="请输入二级分类">
+                        </div>
+                        <!-- ===========文件上传========================= -->
+                        <div class="form-group second_file">
+                            <label for="fileupload" class="btn btn-default second_btn">上传图片</label>
+                            <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic" style="display:none">
+                        </div>
+                        <!-- ===========缩略图========================= -->
+                        <div class="form-group second_pic2 imgBox">
+                            <img src="./images/none.png" width="100">
+                            <input type="hidden" name="brandLogo" id="brandLogo" style="display:none">
+                        </div>
+                    </form>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary btn-logout insertBtn" form="form">添加</button>
+                    <button type="submit" class="btn btn-primary btn-logout2 insertBtn" form="form">添加</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ============== 下拉分类模板引擎 =============================== -->
+    <script type="text/html" id="secondCateList">
+        {{each rows v i}}
+        <li>
+            <a href="#" data-id='{{v.id}}' class='topCate'>{{v.categoryName}}</a>
+        </li>
+        {{/each}}
+    </script>
 
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
