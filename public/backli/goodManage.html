@@ -120,6 +120,7 @@
                     <h4 class="modal-title" id="myModalLabel">添加商品</h4>
                 </div>
                 <form id="form">
+                    <!-- ====二级分类==== -->
                     <div class="form-group">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
@@ -132,29 +133,37 @@
                         </div>
                         <input type="hidden" name="brandId">
                     </div>
+                    <!-- ====输入商品名称==== -->
                     <div class="form-group">
                         <input type="text" class="form-control" name='proName' placeholder="请输入商品名称">
                     </div>
+                    <!-- ====输入商品描述==== -->
                     <div class="form-group">
                         <textarea name="proDesc" class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
                     </div>
+                    <!-- ====输入商品库存==== -->
                     <div class="form-group">
                         <input type="text" class="form-control" name='num' placeholder="请输入商品库存">
                     </div>
+                    <!-- ====输入商品尺码==== -->
                     <div class="form-group">
                         <input type="text" class="form-control" name='size' placeholder="请输入商品尺码">
                     </div>
+                    <!-- ====输入商品原价==== -->
                     <div class="form-group">
                         <input type="text" class="form-control" name='oldPrice' placeholder="请输入商品原价">
                     </div>
+                    <!-- ====输入商品现价==== -->
                     <div class="form-group">
                         <input type="text" class="form-control" name='price' placeholder="请输入商品现价">
                     </div>
+                    <!-- ====上传图片==== -->
                     <div class="form-group">
                         <label for="fileupload" class='btn btn-default'>上传图片</label>
-                        <input type="file" class="form-control" id='fileupload' name='pic1' style="display:none" data-url="/product/addProductPic">
+                        <input type="file" multiple class="form-control" id='fileupload' name='pic1' style="display:none" data-url="/product/addProductPic">
                     </div>
 
+                    <!-- ====获取图片地址==== -->
                     <div class="form-group" id="imgBox">
                         <input type="hidden" name='picStatus'>
                     </div>

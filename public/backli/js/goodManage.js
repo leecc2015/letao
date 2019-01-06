@@ -4,6 +4,8 @@ $(function(){
     // 功能1 渲染表格
     var currentPage = 1;
     var pageSize = 2;
+    // 声明一个空数组保存图片
+    var picArr = [];
 
     render();
     function render() {
@@ -54,7 +56,7 @@ $(function(){
             },
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 var html = template('secondList', data)
                 $('.dropdown-menu').html(html);
             }
@@ -190,10 +192,57 @@ $(function(){
     $("#fileupload").fileupload({
         dataType:"json",
         done:function(e,data){
-            console.log(data);
-            var pic =  data.result.picAddr;
+           var picObj = data.result;
+            var pic =  picObj.picAddr;
+            // 将添加的图片加到imgBox的前面
+            // 将 新得到的图片对象添加到数组的最前面
+            picArr.unshift( picObj );
+            $('#imgBox').prepend('<img src="' + pic + '" width="100">');
+            
+            // 如果上传的图片大于3张，需要将最先上传的删除
+            if(picArr.length > 3 ){
+              picArr.pop();
+              $('#imgBox img:last-of-type').remove();
+              console.log(picArr);
+            }
+
+            if(picArr.length == 3 ){
+              $('#form').data('bootstrapValidator').updateStatus('picStatus', 'VALID');
+            }
         }
     })
+
+    // 功能7 注册校验成功事件
+    $('#form').on('success.form.bv',function(e){
+      e.preventDefault();
+      var params = $("#form").serialize();
+
+      params += '&picArr=' + JSON.stringify( picArr );
+
+      $.ajax({
+        type:'post',
+        url:'/product/addProduct',
+        data:params,
+        success:function( data ){
+          console.log(data);
+          if(data.success){
+            // 关闭模态框
+            $('#insertGood').modal('hide');
+            // 重置表格
+            $("#form").data('bootstrapValidator').resetForm(true);
+            // 渲染页面
+            currentPage = 1;
+            render();
+            // 重置下拉菜单
+            $(".dropdown-toggle .text").text('请选择二级分类');
+            // 删除预览图片
+            $('#imgBox img').remove();
+            // 重置数组
+            picArr = [];
+          }
+        }
+      })
+    });
 
 
 
