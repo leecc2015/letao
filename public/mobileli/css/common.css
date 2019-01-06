@@ -3,6 +3,7 @@
     height: 45px;
     width: 100%;
     max-width: 640px;
+    min-width: 320px;
     background-color: #006699;
     position: fixed;
     top:0;
@@ -42,6 +43,7 @@
 .lt_footer {
     height: 55px;
     width: 100%;
+    min-width: 320px;
     max-width: 640px;
     background-color: #006699;
     position: fixed;
