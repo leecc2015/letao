@@ -1,0 +1,63 @@
+/* ============= 头部区域 =================== */
+.lt_header {
+    height: 45px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #006699;
+    position: fixed;
+    top:0;
+    z-index:999;
+}
+.lt_header .home,
+.lt_header .search {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top:0;
+    font-size:18px;
+    line-height:45px;
+    text-align:center;
+}
+.lt_header .home a, 
+.lt_header .search a {
+    color:#fff;
+}
+.lt_header .home {
+    left:0;
+}
+.lt_header .search {
+    right:0;
+}
+.lt_header h3 {
+    height: 45px;
+    width: 100%;
+    padding:0 45px;
+    line-height:45px;
+    text-align:center;
+    color:#fff;
+    font-size:20px;
+}
+
+/* ============= 底部区域 =================== */
+.lt_footer {
+    height: 55px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #006699;
+    position: fixed;
+    bottom:0;
+    padding-top:5px;
+    overflow: hidden;
+    z-index:999;
+}
+.lt_footer a {
+    width: 25%;
+    text-align:center;
+    display: block;
+    float: left;
+}
+.lt_footer a p {
+    color:#fff;
+    margin:0;
+    
+}

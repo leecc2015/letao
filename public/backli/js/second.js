@@ -67,6 +67,7 @@ $(function () {
         $(".dropdown-toggle .text").text($text);
         var id = $(this).data('id');
         $('[name="categoryId"]').val(id);
+        console.log($('#form').data("bootstrapValidator"));
         $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
     })
 
