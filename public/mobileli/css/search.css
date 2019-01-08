@@ -1,0 +1,28 @@
+.lt_search {
+    height: 54px;
+    /* width: 100%; */
+    padding:10px 0;
+    margin:0 10px;
+    position: relative;
+}
+.lt_search input {
+    height: 100%;
+    width: 100%;
+    border-radius:5px;
+    border:1px solid #007AFF;
+    text-indent:10px;
+    outline-style: none;
+}
+
+.lt_search .search_btn {
+    position: absolute;
+    top:10px;
+    right:0px;
+}
+
+.lt_history {
+    height: 200px;
+    background-color: pink;
+    padding:0 10px;
+}
+

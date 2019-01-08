@@ -4,7 +4,7 @@ $(function () {
     /*调用slider初始化轮播图*/
     gallery.slider({
         /*自动轮播图的间隔时间*/
-        interval: 500
+        interval: 3000
     });
 
 
